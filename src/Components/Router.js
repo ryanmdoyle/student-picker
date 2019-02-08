@@ -5,7 +5,8 @@ import App from './App';
 import NotFound from './NotFound';
 
 // starting with the () below (no {}) will give an implicit return to everything
-const Router =() => (
+
+const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App} />

@@ -1,17 +1,28 @@
 import React from 'react';
-
-
 import Nav from './Nav'
+import AddClassForm from './AddClassForm';
 
-const AddClass = () => (
-  <React.Fragment>
-    <Nav />
-    <div>
-      <label name='students' for='students'>Student List</label>
-      <input type='text' placeholder='enter student names separated by commas'></input>
-      <button type='submit'></button>
-    </div>
-  </React.Fragment>
-)
+class AddClass extends React.Component {
+  state = {
+    classes: []
+  }
+
+  addClass = (newClassObj) => {
+    const currentClasses = [...this.state.classes];
+    currentClasses.push(newClassObj)
+    this.setState({
+      classes: currentClasses
+    })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Nav />
+        <AddClassForm addClass={this.addClass} />
+      </React.Fragment>
+    )
+  }
+}
 
 export default AddClass;

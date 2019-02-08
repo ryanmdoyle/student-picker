@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Navigation = styled.div`
 width: 100vw;
 background: grey;
-font-size: 3em;
+font-size: 3rem;
 color: white;
 display: flex;
 align-items: center;
@@ -20,7 +20,6 @@ ul {
 a {
   padding: 1.25rem 0.5rem;
   font-size: 1.6rem;
-  max-width: 140px;
   font-weight: bold;
   text-decoration: none;
   display: flex;
