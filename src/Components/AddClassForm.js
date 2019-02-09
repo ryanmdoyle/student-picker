@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../styles/button';
 
 class AddClassForm extends React.Component {
   classRef = React.createRef();
@@ -8,7 +9,17 @@ class AddClassForm extends React.Component {
     e.preventDefault();
     const studentList = this.studentsRef.current.value;
     const studentsNoSpaces = studentList.split(', '); // removes spaces between student names
-    const studentsSplit = studentsNoSpaces.toString().split(','); //return array of student
+    const studentsSplit = studentsNoSpaces.toString().split(','); //return array of students
+
+    studentsSplit.map(student => {
+      return (
+        {
+          student: student,
+          count: 0
+        }
+      )
+    })
+
     const newClass = {
       name: this.classRef.current.value,
       students: studentsSplit
@@ -25,7 +36,7 @@ class AddClassForm extends React.Component {
           <input name='class' type='text' ref={this.classRef} placeholder='enter the class name'></input>
           <label name='students'>Student List</label>
           <input type='text' name='students' ref={this.studentsRef} placeholder='enter student names separated by commas'></input>
-          <button type='submit'></button>
+          <Button type='submit'></Button>
         </form>
       </div>
     )
