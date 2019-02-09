@@ -4,10 +4,13 @@ const Button = styled.button`
   font-size: 1rem;
   background: transparent;
   border-radius: 3px;
-  border: 2px solid green;
-  color: green;
-  margin: 0 1rem;
+  border: 2px solid black;
+  color: black;
   padding: 0.25rem 1rem;
+  :hover {
+    background: black;
+    color: white;
+  }
 `;
 
 export default Button;

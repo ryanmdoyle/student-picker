@@ -15,6 +15,7 @@ code {
 }
 
 .inner {
-  max-width: 900px;
+  max-width: 80%;
+  padding-top: 50px;
   margin: auto;
 }

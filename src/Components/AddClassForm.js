@@ -1,6 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Button from '../styles/button';
 
+const Form = styled.form`
+  label {                                                                       
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  input {
+    min-width: 50%;
+    max-width: 70%;
+    margin-top: 0.25rem;
+    margin-right: auto;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-radius: 3px;
+    height: 1.5rem;
+  }
+  button {
+    display: block;
+    margin: 1.5rem 0 0 0;
+  }
+`
 class AddClassForm extends React.Component {
   classRef = React.createRef();
   studentsRef = React.createRef();
@@ -26,18 +50,19 @@ class AddClassForm extends React.Component {
     }
     // call the method in App to update the state
     this.props.addClass(newClass);
+    e.currentTarget.reset()
   }
 
   render() {
     return (
-      <div className='inner'>
-        <form onSubmit={this.createClass}>
+      <div className='addClassForm'>
+        <Form onSubmit={this.createClass}>
           <label name='class'>Class Name</label>
           <input name='class' type='text' ref={this.classRef} placeholder='enter the class name'></input>
           <label name='students'>Student List</label>
           <input type='text' name='students' ref={this.studentsRef} placeholder='enter student names separated by commas'></input>
-          <Button type='submit'></Button>
-        </form>
+          <Button type='submit'>Add Class!</Button>
+        </Form>
       </div>
     )
   }

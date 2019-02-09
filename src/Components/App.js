@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Nav from './Nav';
 import AddClass from './AddClass';
+import AddClassForm from './AddClassForm';
 
 class App extends Component {
   state = {
@@ -24,7 +25,9 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        {(this.props.history.location.pathname === '/') ? "the home" : <AddClass addClass={this.addClass}/> }
+        <div className='inner'>
+          <AddClassForm addClass={this.addClass} />
+        </div>
       </div>
     );
   }
